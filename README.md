@@ -1,1 +1,2 @@
-# EurekAlert
+# EurekAlert! Data Analysis Project Overview
+EurekAlert! is an editorially independent, non-profit news release distribution service launched in 1996. This project was conducted to uncover what kind of content is on the site, who contributes to it, the growth of the amount of content on the site, and the sentiment of that content. The amount of content on the site grew significantly from 2009-18 and continues to grow, along with greater usage of DOIs, which increases record-keeping capabilities, and covering a greater range of topics that are important to scientific discourse.  
