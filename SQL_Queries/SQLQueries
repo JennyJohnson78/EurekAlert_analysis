@@ -1,0 +1,86 @@
+#Figure 1 Code
+SELECT*FROM scraped_data_all WHERE keywords LIKE ‘(keyword)’;
+SELECT column_name(s) FROM table1 
+UNION ALL 
+SELECT column_name(s) FROM table2;
+
+# Figure 2 Code
+SELECT* FROM scraped_data_all WHERE DATE >='2009-07-01' AND DATE <='2018-12-31'; 
+
+# Figure 3 Code
+SELECT journal, count(*) as journal_count, 
+
+       count(*) * 100.0/ sum(count(*)) over () as journal_percent 
+
+FROM scraped_data_all 
+
+GROUP BY journal 
+
+ORDER BY COUNT(journal) DESC 
+
+LIMIT 10; 
+
+# Figure 4 Code
+SELECT*FROM scraped_data_all WHERE DOI IS NULL 
+ 
+
+SELECT CASE WHEN DOI <> ‘/N’ THEN ‘/Y’ 
+		ELSE DOI 
+	END AS DOI_exists 
+FROM scraped_data_all 
+WHERE DOI IS NOT NULL 
+
+# Figure 5 code
+SELECT CASE WHEN DOI <> ‘/N’ THEN ‘/Y’ 
+		ELSE DOI 
+	END AS DOI_exists 
+FROM scraped_data_all 
+WHERE DATE >=2018-01-01' 
+AND DATE <=’2018-09-30' 
+AND DOI IS NOT NULL 
+
+# Figure 6 code
+SELECT publisher, count(*) as publisher_count, 
+
+       count(*) * 100.0/ sum(count(*)) over () as publisher_percent 
+
+FROM scraped_data_all 
+
+GROUP BY publisher 
+
+ORDER BY COUNT(publisher) DESC 
+
+LIMIT 10; 
+
+# Figure 7 code
+SELECT publisher, count(*) as publisher_count,  
+
+       count(*) * 100.0/ sum(count(*)) over () as publisher_percent  
+
+FROM scraped_data_all 
+
+WHERE publisher LIKE '%university%'  
+
+GROUP BY publisher  
+
+ORDER BY COUNT(publisher) DESC  
+
+LIMIT 10; 
+
+# Figure 8 code
+SELECT media_contact, count(*) as media_count  
+
+FROM scraped_data_all 
+
+GROUP BY media_contact  
+
+ORDER BY COUNT(media_contact) DESC  
+
+LIMIT 20; 
+
+# Figure 9 code
+SELECT full_text 
+FROM Influenza 
+FULL OUTER JOIN Pneumonia 
+ON Influenza.full_text = Pneumonia.full_text; 
+

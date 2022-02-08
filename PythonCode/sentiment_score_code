@@ -1,0 +1,59 @@
+SELECT full_text FROM scraped_data_all   
+
+ORDER BY RAND() 
+
+LIMIT 100;  
+
+To get the sentiment of the text within 100 random entries, we need to perform the following: 
+ 
+-- Create stored procedure that uses a pre-trained model to determine sentiment of a given text 
+
+CREATE OR ALTER PROCEDURE [dbo].[get_sentiment](@text NVARCHAR(MAX))  
+
+ AS 
+
+BEGIN 
+
+DECLARE  @script nvarchar(max); 
+
+ -Python script to execute 
+
+SET @script = N' 
+
+import pandas as p 
+
+from microsoftml import rx_featurize, get_sentiment 
+
+ analyze_this = text 
+
+ # Create the data 
+
+text_to_analyze = p.DataFrame(data=dict(Text=[analyze_this])) 
+
+ # Get the sentiment scores 
+
+sentiment_scores = rx_featurize(data=text_to_analyze,ml_transforms=[get_sentiment(cols=dict(scores="Text"))]) 
+
+ # Translate the score  
+
+sentiment_scores["Sentiment"] = sentiment_scores.scores.apply(lambda score: "Positive" if score > 0.6 else "Negative") 
+
+'; 
+
+ EXECUTE sp_execute_external_script 
+
+@language = N'Python' 
+
+, @script = @script 
+
+, @output_data_1_name = N'sentiment_scores' 
+
+, @params = N'@text nvarchar(max)' 
+
+, @text = @text 
+
+WITH RESULT SETS (("Text" NVARCHAR(MAX),"Score" FLOAT, "Sentiment" NVARCHAR(30))); 
+
+END 
+
+GO 
