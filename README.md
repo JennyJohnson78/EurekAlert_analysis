@@ -94,6 +94,8 @@ This will combine the two queries together. Next, using either OpenRefine or Pyt
 
 ### Sentiment Score for Journal Entries (sentiment analysis)
 
+#### *See Python code*
+
 From here, we will receive a score is the sentiment is positive or negative, followed by a numeric score. We can then build a simple spreadsheet of these values and create a scatterplot via Microsoft Excel or R. 
 
 Fig. 10 shows the distribution of the sentiment scores for the 100 random entries that were used. We can see that the distribution skews very far to the negative side, with the most common score being “negative .5%”. This is not difficult to comprehend due to the fact that many of the most popular journals on EurekAlert! are scientific and medical. When speaking about illnesses, climate change, and human biology, the topic will most likely deal with issues facing both human beings and animals, which will contain serious, and sometimes “dark" terminology.
