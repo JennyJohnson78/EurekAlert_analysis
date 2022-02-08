@@ -10,11 +10,11 @@ Questions to answer:
 - What are the top 10 journals that publish on EurekAlert!?
 - How many articles have and do not have a DOI for the years of 2009-2018?
 - How many articles have and do not have a DOI for the year of 2018 only?
--
--
--
--
--
+- Who are the top 10 publishsers on EurekAlert!?
+- Who are the top 10 university publishsers on EurekAlert!?
+- Who are the top media personnel by article count?
+- What are the top articles by leading cause of death?
+- What is the sentiment score by journal entry?
 
 ## Results
 
