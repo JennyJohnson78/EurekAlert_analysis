@@ -4,6 +4,8 @@
  
 The EurekAlert! Website states: “These news releases may describe research findings recently published in peer-reviewed journals, timely information related to the business, innovation, and societal aspects of science, and details of grants, awards and honors, books, and scientific meetings.” The top subjects include Agriculture, Archaeology, Atmospheric Science, Biology, Business/Economics, Chemistry, Earth Science, Education, Mathematics/Statistics, Medicine/Health, Policy/Ethics, Social/Behavioral Science, Space/Planetary Science, and Technology. What is the quantity of releases describing each of these topics? 
 
+##### data can be requested from Wayne State University
+
 Questions to answer:
 - What are the top 5 topics on EurekAlert! by keyword?
 - What is the growth of EurekAlert! journals on the site?
